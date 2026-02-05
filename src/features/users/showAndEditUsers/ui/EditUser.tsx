@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react"
-import { UserProps } from "@entities/user/model/types"
-import { UserCardInfo } from "@entities/user/ui/UserCardInfo"
 import { Flex, Form, Modal } from "antd"
-import { UserManipulationType } from "@shared/types/user"
-import { Input } from "@shared/ui/Input/styles"
-import { Button } from "@shared/ui/Button/styles"
 import { FormItem } from "./styles"
 import { useEditUser } from "../model/useEditUser"
 import { useRemoveUser } from "../model/useRemoveUser"
+import { UserManipulationType } from "@shared/types/user"
+import { Input } from "@shared/ui/Input/styles"
+import { Button } from "@shared/ui/Button/styles"
+import { UserCardInfo, UserProps } from "@entities/user"
 
 export const EditUser = ({ id, name, avatar, createdAt }: UserProps) => {
     const [open, isOpen] = useState(false)

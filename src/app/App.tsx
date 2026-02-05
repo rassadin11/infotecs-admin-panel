@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthPage } from '@pages/AuthPage/AuthPage'
 import { UsersPage } from '@pages/UsersPage/UsersPage'
 import { ConfigProvider } from 'antd'
-import { RedirectIfAuth, RedirectIfNotAuth } from '@features/auth/redirect'
+import { RedirectIfAuth, RedirectIfNotAuth, RedirectFromHome } from '@features/auth/redirect'
 import { NotFound } from '@pages/NotFound/NotFound'
 
 const router = createBrowserRouter([
@@ -12,6 +12,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
+      {
+        index: true,
+        element: <RedirectFromHome />,
+      },
       {
         element: <RedirectIfNotAuth />,
         children: [

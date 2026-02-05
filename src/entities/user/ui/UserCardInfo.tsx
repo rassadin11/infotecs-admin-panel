@@ -1,8 +1,8 @@
 import React from 'react';
 import { Flex, Typography } from 'antd';
-import { UserCardProps } from '@entities/user/model/types';
 import dayjs from 'dayjs';
 import { AvatarStyles, CardStyles } from './styles';
+import { UserCardProps } from '../model/types';
 
 export const UserCardInfo = ({ name, avatar, createdAt, onClick }: UserCardProps) => {
     return (
