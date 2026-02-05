@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography } from 'antd'
-import { UsersList } from '@features/users/list/ui/UsersList'
+import { UsersList } from '@features/users/showAndEditUsers/ui/UsersList'
 import { LogoutButton } from '@features/auth/logout/ui/logoutButton'
 import { CreateUser } from '@features/users/createUser'
 

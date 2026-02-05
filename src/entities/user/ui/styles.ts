@@ -9,7 +9,7 @@ export const CardStyles = styled(Card)`
     max-width: 85vw;
 
     & > div {
-        padding: 1rem!important;
+        padding: 1rem 0!important;
     }
 
     &:last-child {
