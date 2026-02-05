@@ -1,11 +1,11 @@
 import React from 'react'
-import { NotFound } from '@pages/NotFound'
 import { Layout } from '@app/Layout'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthPage } from '@pages/AuthPage/AuthPage'
 import { UsersPage } from '@pages/UsersPage/UsersPage'
 import { ConfigProvider } from 'antd'
 import { RedirectIfAuth, RedirectIfNotAuth } from '@features/auth/redirect'
+import { NotFound } from '@pages/NotFound/NotFound'
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         element: <RedirectIfNotAuth />,
         children: [
           {
-            index: true,
+            path: '/users',
             element: <UsersPage />,
           }
         ]
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <NotFound />,
+    element: (<RedirectIfNotAuth><NotFound /></RedirectIfNotAuth>),
   },
 ])
 
