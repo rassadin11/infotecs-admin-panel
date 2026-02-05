@@ -1,12 +1,14 @@
-import { UserCard } from '@entities/user';
 import { getUsers } from '@entities/user/api/getUsers';
 import { UserProps } from '@entities/user/model/types';
+import { EditUser } from '@features/users/showAndEditUsers/ui/EditUser';
 import { useQuery } from '@tanstack/react-query';
+
 import React from 'react';
 
 export const UsersList = () => {
-    const { isLoading, error, data } = useQuery(['users'], () => {
-        return getUsers().then(res => res.data);
+    const { isLoading, error, data } = useQuery({
+        queryKey: ['users'],
+        queryFn: () => getUsers().then(res => res.data)
     });
 
     if (isLoading) return <div>Loading...</div>;
@@ -15,7 +17,7 @@ export const UsersList = () => {
     return (
         <div>
             {data.map((user: UserProps) => (
-                <UserCard {...user} key={user.id} />
+                <EditUser {...user} key={user.id} />
             ))}
         </div>
     );
