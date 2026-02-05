@@ -14,13 +14,13 @@ export const AuthPage = () => {
   const navigate = useNavigate();
 
   const handleSuccessLogin = () => {
-    navigate('/');
+    navigate('/users');
   }
 
   return (
     <Flex align='center' justify='center' style={{ minHeight: '100vh' }}>
       <FormWrapper>
-        <ModalTitle $bold={true} $fontSize='16px'>Авторизация</ModalTitle>
+        <ModalTitle $bold={true} $fontSize='1rem'>Авторизация</ModalTitle>
         <AuthForm onSuccess={handleSuccessLogin} />
       </FormWrapper>
     </Flex>

@@ -8,7 +8,7 @@ export const NotFound: React.FC = () => {
       status="404"
       title="404"
       subTitle="Такой страницы не существует"
-      extra={<Link to="/">Вернуться на главную страницу</Link>}
+      extra={<Link to="/users">Вернуться на страницу пользователей</Link>}
     />
   );
 };
